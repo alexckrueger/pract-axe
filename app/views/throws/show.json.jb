@@ -1,0 +1,5 @@
+{
+  id: @throw.id,
+  created_at: @throw.created_at,
+  updated_at: @throw.updated_at
+}

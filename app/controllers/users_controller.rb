@@ -16,22 +16,22 @@ class UsersController < ApplicationController
   end
 
   def show
-    user = User.find(current_user.id)
-    render json: user
+    @user = current_user
+    render template: "users/show"
   end
 
   def update
-    user = User.find(current_user.id)
-    user.name = params[:name] || user.name
-    if user.save
-      render json: user
+    @user = current_user
+    @user.name = params[:name] || @user.name
+    if @user.save
+      render template: "users/show"
     else
-      render json: {errors: user.errors.full_messages}, status: :bad_request
+      render json: {errors: @user.errors.full_messages}, status: :bad_request
     end
   end
 
   def destroy
-    user = User.find(current_user.id)
+    user = current_user
     user.destroy
     render json: {message: "YOU has been obliterated to infinity and beyond and back once again"}
   end

@@ -1,0 +1,6 @@
+@throws.map do |throw|
+  {
+    id: throw.id,
+    url: throw_url(throw, format: :json)
+  }
+end

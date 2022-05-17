@@ -22,7 +22,7 @@ Authorization: Bearer {{ jwt }}
 }
 
 ### Throw Destroy
-DELETE {{localhost}}/throws/38
+DELETE {{localhost}}/throws/39
 Authorization: Bearer {{ jwt }}
 Content-Type: application/json
 
@@ -68,12 +68,12 @@ Content-Type: application/json
 }
 
 ### Users show
-GET {{localhost}}/users/3
+GET {{localhost}}/users/3.json
 Authorization: Bearer {{ jwt }}
 Content-Type: application/json
 
 ### Users update
-PATCH {{localhost}}/users/3
+PATCH {{localhost}}/users/3.json
 Authorization: Bearer {{ jwt }}
 Content-Type: application/json
 
