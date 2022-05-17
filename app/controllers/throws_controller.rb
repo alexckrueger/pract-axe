@@ -1,0 +1,2 @@
+class ThrowsController < ApplicationController
+end
