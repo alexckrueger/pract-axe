@@ -27,6 +27,12 @@ GET {{localhost}}/trainings
 
 ### Training Create
 POST {{localhost}}/trainings
+Content-Type: application/json
+
+{
+  "user_id": 1,
+  "name": "test training"
+}
 
 ### Training Destroy
-DELETE {{localhost}}/trainings/6
+DELETE {{localhost}}/trainings/7
