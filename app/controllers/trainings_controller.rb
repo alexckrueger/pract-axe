@@ -2,13 +2,13 @@ class TrainingsController < ApplicationController
   before_action :authenticate_user
 
   def index
-    trainings = Training.all
+    trainings = current_user.trainings
     render json: trainings
   end
 
   def create
     training = Training.new(
-      user_id: params[:user_id], #change to current_user
+      user_id: current_user.id,
       name: params[:name]
     )
     if training.save
@@ -19,7 +19,7 @@ class TrainingsController < ApplicationController
   end
 
   def destroy
-    training = Training.find(params[:id])
+    training = current_user.trainings.find(params[:id])
     training.destroy
     render json: {message: "Training has been obliterated to infinity and beyond and back once again"}
   end
