@@ -1,0 +1,32 @@
+@localhost = http://localhost:3000
+
+### Throw Create
+POST {{localhost}}/throws
+Content-Type: application/json
+
+{
+  "training_id": 1,
+  "points": 5
+}
+
+### Throw Update
+PATCH {{localhost}}/throws/37
+Content-Type: application/json
+
+{
+  "training_id": 1,
+  "points": 3
+}
+
+### Throw Destroy
+DELETE {{localhost}}/throws/37
+
+
+### Training Index
+GET {{localhost}}/trainings
+
+### Training Create
+POST {{localhost}}/trainings
+
+### Training Destroy
+DELETE {{localhost}}/trainings/6
