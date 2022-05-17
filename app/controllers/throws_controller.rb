@@ -1,4 +1,5 @@
 class ThrowsController < ApplicationController
+  before_action :authenticate_user
 
   def create
     throw = Throw.new(

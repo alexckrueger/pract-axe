@@ -1,8 +1,19 @@
 @localhost = http://localhost:3000
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NTI4OTUxMzh9.f5TavF4sg0Q8KTruSKf4zGMFV0FWmwvjp0Q8ufgnQYI
+
+### Sessions create (login)
+POST http://localhost:3000/sessions
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "password"
+}
 
 ### Throw Create
 POST {{localhost}}/throws
 Content-Type: application/json
+Authorization: Bearer {{ jwt }}
 
 {
   "training_id": 1,
@@ -10,8 +21,9 @@ Content-Type: application/json
 }
 
 ### Throw Update
-PATCH {{localhost}}/throws/37
+PATCH {{localhost}}/throws/38
 Content-Type: application/json
+Authorization: Bearer {{ jwt }}
 
 {
   "training_id": 1,
@@ -19,15 +31,20 @@ Content-Type: application/json
 }
 
 ### Throw Destroy
-DELETE {{localhost}}/throws/37
+DELETE {{localhost}}/throws/38
+Authorization: Bearer {{ jwt }}
+Content-Type: application/json
 
 
 ### Training Index
 GET {{localhost}}/trainings
+Authorization: Bearer {{ jwt }}
+Content-Type: application/json
 
 ### Training Create
 POST {{localhost}}/trainings
 Content-Type: application/json
+Authorization: Bearer {{ jwt }}
 
 {
   "user_id": 1,
@@ -35,4 +52,38 @@ Content-Type: application/json
 }
 
 ### Training Destroy
-DELETE {{localhost}}/trainings/7
+DELETE {{localhost}}/trainings/8
+Authorization: Bearer {{ jwt }}
+Content-Type: application/json
+
+
+### Users create (signup)
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Test#1",
+  "email": "test@test.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
+
+### Users show
+GET {{localhost}}/users/3
+Authorization: Bearer {{ jwt }}
+Content-Type: application/json
+
+### Users update
+PATCH {{localhost}}/users/3
+Authorization: Bearer {{ jwt }}
+Content-Type: application/json
+
+{
+  "id": 3,
+  "name": "Test"
+}
+
+### Users Destroyyyy
+DELETE {{localhost}}/users/3
+Authorization: Bearer {{ jwt }}
+Content-Type: application/json
