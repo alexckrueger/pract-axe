@@ -1,6 +1,6 @@
 @trainings.map do |training|
   {
     id: training.id,
-    url: training_url(training, format: :json)
+    name: training.name
   }
 end

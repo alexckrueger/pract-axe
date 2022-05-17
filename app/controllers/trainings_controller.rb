@@ -2,19 +2,19 @@ class TrainingsController < ApplicationController
   before_action :authenticate_user
 
   def index
-    trainings = current_user.trainings
-    render json: trainings
+    @trainings = current_user.trainings
+    render template: "trainings/index"
   end
 
   def create
-    training = Training.new(
+    @training = Training.new(
       user_id: current_user.id,
       name: params[:name]
     )
-    if training.save
-      render json: training
+    if @training.save
+      render template: "trainings/show"
     else
-      render json: {errors: training.errors.full_messages}, status: :bad_request
+      render json: {errors: @training.errors.full_messages}, status: :bad_request
     end
   end
 

@@ -28,12 +28,12 @@ Content-Type: application/json
 
 
 ### Training Index
-GET {{localhost}}/trainings
+GET {{localhost}}/trainings.json
 Authorization: Bearer {{ jwt }}
 Content-Type: application/json
 
 ### Training Create
-POST {{localhost}}/trainings
+POST {{localhost}}/trainings.json
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
@@ -42,7 +42,7 @@ Authorization: Bearer {{ jwt }}
 }
 
 ### Training Destroy
-DELETE {{localhost}}/trainings/12
+DELETE {{localhost}}/trainings/17
 Authorization: Bearer {{ jwt }}
 Content-Type: application/json
 
