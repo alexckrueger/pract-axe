@@ -1,5 +1,5 @@
 @localhost = http://localhost:3000
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJleHAiOjE2NTI4OTU3MTl9.eX0nCvYdmKhN8BzDsFwx1noQYDhOJ14OVsE8WrpEPpc
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTI5ODIxMDN9.W-w_Bm2ERIzBghzpJzDG3IXzc12FariVFausPjm8vQo
 
 ### Throw Create
 POST {{localhost}}/throws
@@ -63,7 +63,7 @@ POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-  "email": "test@test.com",
+  "email": "alex@test.com",
   "password": "password"
 }
 

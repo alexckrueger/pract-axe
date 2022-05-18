@@ -1,6 +1,6 @@
 User.create!([
-  {email: "alex@test.com", password_digest: "password", name: "Alex"},
-  {email: "mikey@test.com", password_digest: "password", name: "Mikey"}
+  {email: "alex@test.com", password: "password", name: "Alex"},
+  {email: "mikey@test.com", password: "password", name: "Mikey"}
 ])
 
 Training.create!([
