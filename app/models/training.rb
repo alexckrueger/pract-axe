@@ -6,15 +6,6 @@ class Training < ApplicationRecord
     throws.count
   end
 
-  def targets
-    hatchet_bullseyes = throws.where(big_axe: false, clutch_called: false)
-    hatchet_clutches = throws.where(big_axe: false, clutch_called: true)
-    big_axe_bullseyes = throws.where(big_axe: true, clutch_called: false)
-    big_axe_clutches = throws.where(big_axe: true, clutch_called: true)
-
-    return target
-  end
-
   def average_axe
     total_points = []
     throws.each do |axe|

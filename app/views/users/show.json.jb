@@ -1,5 +1,8 @@
 {
   id: @user.id,
   name: @user.name,
-  email: @user.email
+  email: @user.email,
+  throw_count: @user.throw_count,
+  hatchet_throws: @user.hatchet_throws,
+  big_axe_throws: @user.big_axe_throws
 }
