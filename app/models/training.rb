@@ -15,7 +15,7 @@ class Training < ApplicationRecord
   end
 
   def hatchet_throws
-    hatchets = {}
+    hatchets = {} # Output hash
     hatchet_throws = throws.where(big_axe: false)
     hatchet_bullseyes = throws.where(big_axe: false, clutch_called: false)
     hatchet_clutches = throws.where(big_axe: false, clutch_called: true)
@@ -29,11 +29,13 @@ class Training < ApplicationRecord
       end
       hatchets[:average_axe] = (hatchet_points.reduce(:+)/hatchets[:throw_count].to_f).round(2)
 
+      # Hatchet Bullseye stats
       hatchets[:bullseye_attempts] = hatchet_bullseyes.length
       if hatchets[:bullseye_attempts] > 0
         hatchets[:bullseye_accuracy] = ((hatchet_bullseyes.where(points: 5).length/(hatchets[:bullseye_attempts]).to_f).round(2) * 100).to_i
       end
   
+      # Hatchet Clutch stats
       hatchets[:clutch_attempts] = hatchet_clutches.length
       if hatchets[:clutch_attempts] > 0
         hatchets[:clutch_accuracy] = ((hatchet_clutches.where(points: 7).length/(hatchets[:clutch_attempts]).to_f).round(2) * 100).to_i
@@ -44,7 +46,7 @@ class Training < ApplicationRecord
   end
 
   def big_axe_throws
-    big_axes = {}
+    big_axes = {} # Output hash
     big_axe_throws = throws.where(big_axe: true)
     big_axe_bullseyes = throws.where(big_axe: true, clutch_called: false)
     big_axe_clutches = throws.where(big_axe: true, clutch_called: true)
@@ -58,11 +60,13 @@ class Training < ApplicationRecord
       end
       big_axes[:average_axe] = (big_axe_points.reduce(:+)/big_axes[:throw_count].to_f).round(2)
 
+      # Big Axe Bullseye stats
       big_axes[:bullseye_attempts] = big_axe_bullseyes.length
       if big_axes[:bullseye_attempts] > 0
         big_axes[:bullseye_accuracy] = ((big_axe_bullseyes.where(points: 5).length/(big_axes[:bullseye_attempts]).to_f).round(2) * 100).to_i
       end
   
+      # Big Axe Clutch stats
       big_axes[:clutch_attempts] = big_axe_clutches.length
       if big_axes[:clutch_attempts] > 0
         big_axes[:clutch_accuracy] = ((big_axe_clutches.where(points: 7).length/(big_axes[:clutch_attempts]).to_f).round(2) * 100).to_i
