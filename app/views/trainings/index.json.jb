@@ -2,6 +2,8 @@
   {
     id: training.id,
     name: training.name,
+    created_at: training.created_at,
+    friendly_created_at: training.friendly_created_at,
     throw_count: training.throw_count,
     average_axe: training.average_axe,
     hatchet_throws: training.hatchet_throws,

@@ -1,5 +1,5 @@
 @localhost = http://localhost:3000
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTI5ODIxMDN9.W-w_Bm2ERIzBghzpJzDG3IXzc12FariVFausPjm8vQo
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTU0OTYyNTZ9.vDpGI4hGPmIY4hC2rC_BUYuwQqu8OO9lANzpjRN4yxg
 
 ### Throw Create
 POST {{localhost}}/throws
