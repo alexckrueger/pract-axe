@@ -8,7 +8,7 @@ class TrainingsController < ApplicationController
 
   def show
     @training = current_user.trainings.find(params[:id])
-    render template: "trainings/index"
+    render template: "trainings/show"
   end
 
   def create
