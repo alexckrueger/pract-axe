@@ -2,9 +2,14 @@ class ThrowsController < ApplicationController
   before_action :authenticate_user
 
   def create
+    if params[:clutch_called] && params[:points] != 7
+      true_points = 0
+    else
+      true_points = params[:points]
+    end
     throw = Throw.new(
       training_id: params[:training_id],
-      points: params[:points],
+      points: true_points,
       clutch_called: params[:clutch_called] || false,
       big_axe: params[:big_axe] || false
     )
