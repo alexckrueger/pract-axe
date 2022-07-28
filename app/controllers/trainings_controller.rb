@@ -17,7 +17,7 @@ class TrainingsController < ApplicationController
       name: params[:name]
     )
     if @training.save
-      render template: "trainings/show"
+      render json: @training
     else
       render json: {errors: @training.errors.full_messages}, status: :bad_request
     end

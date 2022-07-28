@@ -15,11 +15,15 @@ class Training < ApplicationRecord
   end
 
   def average_axe
-    total_points = []
-    throws.each do |axe|
-      total_points << axe.points
+    if throws.count > 0
+      total_points = []
+      throws.each do |axe|
+        total_points << axe.points
+      end
+      return (total_points.reduce(:+)/total_points.length.to_f).round(2)
+    else
+      return "-"
     end
-    (total_points.reduce(:+)/total_points.length.to_f).round(2)
   end
 
   def hatchet_throws
