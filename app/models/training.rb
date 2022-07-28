@@ -2,6 +2,10 @@ class Training < ApplicationRecord
   belongs_to :user
   has_many :throws
 
+  def throws_desc
+    throws.order(created_at: :desc)
+  end
+
   def friendly_created_at
     created_at.strftime("%B %e, %Y")
   end

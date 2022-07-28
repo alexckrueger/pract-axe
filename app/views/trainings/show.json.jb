@@ -5,5 +5,5 @@
   average_axe: @training.average_axe,
   hatchet_throws: @training.hatchet_throws,
   big_axe_throws: @training.big_axe_throws,
-  throws: @training.throws
+  throws: @training.throws_desc
 }
