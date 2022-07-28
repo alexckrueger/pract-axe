@@ -6,6 +6,11 @@ class TrainingsController < ApplicationController
     render template: "trainings/index"
   end
 
+  def show
+    @training = current_user.trainings.find(params[:id])
+    render template: "trainings/index"
+  end
+
   def create
     @training = Training.new(
       user_id: current_user.id,

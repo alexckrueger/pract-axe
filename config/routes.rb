@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   # Trainings
   get "/trainings" => "trainings#index"
+  get "/trainings/:id" => "trainings#show"
   post "/trainings" => "trainings#create"
   delete "/trainings/:id" => "trainings#destroy"
   
