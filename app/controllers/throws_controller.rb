@@ -2,7 +2,7 @@ class ThrowsController < ApplicationController
   before_action :authenticate_user
 
   def create
-    if params[:clutch_called] && params[:points] != 7
+    if params[:clutch_called] && params[:points] != 7 || !params[:clutch_called] && params[:points] == 7
       true_points = 0
     else
       true_points = params[:points]
